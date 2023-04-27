@@ -6,9 +6,9 @@ import IconUsa from "./icons/IconUsa.vue";
 <template>
   <nav class="flex items-center justify-between px-8">
     <div>
-      <RouterLink to="/">
+      <!-- <RouterLink to="/">
         <Logo />
-      </RouterLink>
+      </RouterLink> -->
     </div>
     <button
       class="bg-white border-[3px] p-[2px] border-myBlack boxShadow flex items-center right-radious"

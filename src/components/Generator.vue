@@ -89,7 +89,7 @@ export default {
 </script>
 
 <template>
-  <div class="text-center w-[45%] flex flex-col gap-y-4">
+  <div class="text-center sm:w-[45%] flex flex-col gap-y-4 max-sm:px-6">
     <div class="my-3">
       <h2
         class="text-4xl font-bold font-rum mb-5"
@@ -124,7 +124,7 @@ export default {
         />
       </div>
     </div>
-    <div class="w-full flex items-center justify-between my-3">
+    <div class="w-full flex items-center flex-wrap gap-y-4 justify-between my-3">
       <label class="flex items-center gap-3 cursor-pointer"
         ><input
           type="checkbox"
@@ -155,7 +155,7 @@ export default {
       </label>
     </div>
     <div class="flex items-center justify-center w-full mt-3">
-      <div class="flex items-center w-full gap-x-6">
+      <div class="flex items-center w-full flex-wrap max-sm:gap-y-6 sm:gap-x-6">
         <button
           @click="generatePassword"
           :disabled="!atLeastOneChecked"
