@@ -1,11 +1,7 @@
 <script>
 import { ref, computed } from "vue";
-import Button from "./Button.vue";
 
 export default {
-  components: {
-    Button
-  },
   setup() {
     const passwordLength = ref(8);
     const password = ref("");
@@ -72,7 +68,6 @@ export default {
       document.body.removeChild(input);
       setTimeout(() => {
         copied.value = false;
-        //iconClass.value = 'far fa-copy';
       }, 5000);
     };
 
@@ -87,7 +82,7 @@ export default {
       copyToClipboard,
       passwordStrength,
       atLeastOneChecked,
-      copied
+      copied,
     };
   },
 };
@@ -96,55 +91,111 @@ export default {
 <template>
   <div class="text-center w-[45%] flex flex-col gap-y-4">
     <div class="my-3">
-      <h2 class="text-4xl font-bold font-rum mb-5" :class="{
-        'text-myRed': passwordLength < 10,
-        'text-myGold-200': passwordLength < 20,
-        'text-myGreen': passwordLength >= 20,
-      }">
+      <h2
+        class="text-4xl font-bold font-rum mb-5"
+        :class="{
+          'text-myRed': passwordLength < 10,
+          'text-myGold-200': passwordLength < 20,
+          'text-myGreen': passwordLength >= 20,
+        }"
+      >
         ({{ passwordLength }}) {{ passwordStrength }} Password
       </h2>
       <div>
-        <input id="password" type="text" :value="password" readonly
-          class="border-[3px] border-myBlack rounded-lg text-xl py-2 px-4 font-semibold text-center w-full drop-shadow-md" />
+        <input
+          id="password"
+          type="text"
+          :value="password"
+          readonly
+          class="border-[3px] border-myBlack rounded-lg text-xl py-2 px-4 font-semibold text-center w-full drop-shadow-md"
+        />
       </div>
     </div>
     <div class="flex flex-col space-y-4">
       <div class="flex items-center space-x-2">
-        <input id="password-length" type="range" v-model="passwordLength" min="1" max="50" step="1"
-          class="w-full appearance-none rounded-lg h-5 bg-myPurple-100 border-[3px] border-myBlack transition-all">
+        <input
+          id="password-length"
+          type="range"
+          v-model="passwordLength"
+          min="1"
+          max="50"
+          step="1"
+          class="w-full appearance-none rounded-lg h-5 bg-myPurple-100 border-[3px] border-myBlack transition-all"
+        />
       </div>
     </div>
     <div class="w-full flex items-center justify-between my-3">
-      <label><input type="checkbox" v-model="includeNumbers" /> Numbers</label>
-      <label><input type="checkbox" v-model="includeSymbols" /> Symbols</label>
-      <label><input type="checkbox" v-model="includeLowercase" /> Lowercase
+      <label class="flex items-center gap-3 cursor-pointer"
+        ><input
+          type="checkbox"
+          v-model="includeNumbers"
+        />
+        Numbers</label
+      >
+      <label class="flex items-center gap-3 cursor-pointer"
+        ><input
+          type="checkbox"
+          v-model="includeSymbols"
+        />
+        Symbols</label
+      >
+      <label class="flex items-center gap-3 cursor-pointer"
+        ><input
+          type="checkbox"
+          v-model="includeLowercase"
+        />
+        Lowercase
       </label>
-      <label><input type="checkbox" v-model="includeUppercase" /> Uppercase
+      <label class="flex items-center gap-3 cursor-pointer"
+        ><input
+          type="checkbox"
+          v-model="includeUppercase"
+        />
+        Uppercase
       </label>
     </div>
     <div class="flex items-center justify-center w-full mt-3">
       <div class="flex items-center w-full gap-x-6">
-        <button @click="generatePassword" :disabled="!atLeastOneChecked"
-          class="bottomShadow py-2 px-4 font-bold flex items-center justify-center gap-x-3 w-full bg-myGold-300 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all">
+        <button
+          @click="generatePassword"
+          :disabled="!atLeastOneChecked"
+          class="bottomShadow py-2 px-4 font-bold flex items-center justify-center gap-x-3 w-full bg-myGold-300 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
+        >
           <span>
             <img src="../assets/generate.svg" alt="generate" />
           </span>
           <span> Generate Password </span>
         </button>
-        <!-- <Button iconName="../assets/generate.svg" buttonText="Generate Password" :handleClick="generatePassword" class="bg-myGold-300" /> -->
-        <button @click="copyToClipboard"
+        <button
+          @click="copyToClipboard"
           class="bottomShadow py-2 px-4 font-bold w-full bg-myPurple-100 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
-          :class="{ 'bg-myGreen': copied }" :disabled="copied">
+          :class="{ 'bg-myGreen/100': copied }"
+          :disabled="copied"
+        >
           <transition name="fade" mode="out-in">
-            <span v-if="!copied" class="flex items-center justify-center gap-x-3">
+            <span
+              v-if="!copied"
+              class="flex items-center justify-center gap-x-3"
+            >
               <span>
-                <img src="../assets/copy.svg" alt="copy" class="transition-all"/>
+                <img
+                  src="../assets/copy.svg"
+                  alt="copy"
+                  class="transition-all"
+                />
               </span>
               <span> Copy Password </span>
             </span>
-            <span v-else class="flex items-center justify-center py-1 gap-x-3 text-white ">
+            <span
+              v-else
+              class="flex items-center justify-center py-1 gap-x-3 text-white"
+            >
               <span>
-                <img src="../assets/checked.svg" alt="copy" class="transition-all"/>
+                <img
+                  src="../assets/checked.svg"
+                  alt="copy"
+                  class="transition-all"
+                />
               </span>
               <span> Password Copied </span>
             </span>
@@ -165,27 +216,59 @@ export default {
   opacity: 0;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 32px;
   height: 32px;
-  background-color: #FAC82F;
-  border: 3px solid #1F1F1F;
+  background-color: #fac82f;
+  border: 3px solid #1f1f1f;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px 1px #1f1f1f;
+  box-shadow: 1px 1px 0px 0px #1f1f1f;
   transform: translateY(-1px);
 }
 
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   width: 32px;
   height: 32px;
-  background-color: #FAC82F;
-  border: 3px solid #1F1F1F;
+  background-color: #fac82f;
+  border: 3px solid #1f1f1f;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px 1px #1f1f1f;
+  box-shadow: 1px 1px 0px 0px #1f1f1f;
   transform: translateY(-1px);
+}
+
+input[type="checkbox"]{
+  appearance: none;
+  -webkit-appearance: none;
+  height: 27px;
+  width: 27px;
+  background-color: #FEFEFE;
+  border: solid 2px #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px 0px #1f1f1f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"]::after{
+  content: url('../assets/check.svg');
+  display: none;
+}
+
+input[type="checkbox"]:active{
+  box-shadow: 1px 1px 0px 0px #1f1f1f;
+  transform: translateY(2px);
+  transition: all ease-in 150ms;
+}
+input[type="checkbox"]:checked{
+  background-color: #07BB1F;
+}
+input[type="checkbox"]:checked::after{
+  display: block;
 }
 </style>
