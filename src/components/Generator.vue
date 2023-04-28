@@ -1,14 +1,14 @@
 <script>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 
 export default {
   setup() {
-    const passwordLength = ref(8);
+    const passwordLength = ref(20);
     const password = ref("");
     const includeNumbers = ref(true);
     const includeSymbols = ref(false);
     const includeLowercase = ref(true);
-    const includeUppercase = ref(false);
+    const includeUppercase = ref(true);
     const copied = ref(false);
 
     const passwordStrength = computed(() => {
@@ -71,6 +71,10 @@ export default {
       }, 5000);
     };
 
+    onMounted(() => {
+      generatePassword()
+    });
+
     return {
       passwordLength,
       password,
@@ -124,38 +128,28 @@ export default {
         />
       </div>
     </div>
-    <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gao-y-6 text-xl md:text-base my-3">
+    <div
+      class="w-full grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gao-y-6 text-xl md:text-base my-3"
+    >
       <label class="flex items-center gap-3 cursor-pointer"
-        ><input
-          type="checkbox"
-          v-model="includeNumbers"
-        />
-        Numbers</label
+        ><input type="checkbox" v-model="includeNumbers" /> Numbers</label
       >
       <label class="flex items-center gap-3 cursor-pointer"
-        ><input
-          type="checkbox"
-          v-model="includeSymbols"
-        />
-        Symbols</label
+        ><input type="checkbox" v-model="includeSymbols" /> Symbols</label
       >
       <label class="flex items-center gap-3 cursor-pointer"
-        ><input
-          type="checkbox"
-          v-model="includeLowercase"
-        />
+        ><input type="checkbox" v-model="includeLowercase" />
         Lowercase
       </label>
       <label class="flex items-center gap-3 cursor-pointer"
-        ><input
-          type="checkbox"
-          v-model="includeUppercase"
-        />
+        ><input type="checkbox" v-model="includeUppercase" />
         Uppercase
       </label>
     </div>
     <div class="flex items-center justify-center w-full mt-3">
-      <div class="flex items-center w-full flex-wrap max-sm:gap-y-6 sm:gap-x-6">
+      <div
+        class="flex items-center w-full max-md:flex-wrap max-sm:gap-y-6 sm:gap-x-6"
+      >
         <button
           @click="generatePassword"
           :disabled="!atLeastOneChecked"
@@ -240,12 +234,12 @@ input[type="range"]::-moz-range-thumb {
   transform: translateY(-1px);
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   height: 27px;
   width: 27px;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   border: solid 2px #1f1f1f;
   border-radius: 8px;
   box-shadow: 2px 2px 0px 0px #1f1f1f;
@@ -255,20 +249,20 @@ input[type="checkbox"]{
   justify-content: center;
 }
 
-input[type="checkbox"]::after{
-  content: url('../assets/check.svg');
+input[type="checkbox"]::after {
+  content: url("../assets/check.svg");
   display: none;
 }
 
-input[type="checkbox"]:active{
+input[type="checkbox"]:active {
   box-shadow: 1px 1px 0px 0px #1f1f1f;
   transform: translateY(2px);
   transition: all ease-in 150ms;
 }
-input[type="checkbox"]:checked{
-  background-color: #01DC2C;
+input[type="checkbox"]:checked {
+  background-color: #01dc2c;
 }
-input[type="checkbox"]:checked::after{
+input[type="checkbox"]:checked::after {
   display: block;
 }
 </style>

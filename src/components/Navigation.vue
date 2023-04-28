@@ -7,7 +7,7 @@ import { ref } from "vue";
 const width = ref(window.innerWidth);
 </script>
 <template>
-  <nav class="flex items-center justify-between py-4 px-6 md:px-8">
+  <nav class="flex items-center justify-between max-sm:py-4 px-6 md:px-8">
     <div>
       <RouterLink to="/">
         <Logo v-if="width >= 600"/>
