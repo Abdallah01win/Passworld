@@ -10,7 +10,7 @@ const width = ref(window.innerWidth);
   <nav class="flex items-center justify-between max-sm:py-4 px-6 md:px-8">
     <div>
       <RouterLink to="/">
-        <Logo v-if="width >= 600"/>
+        <Logo v-if="width >= 640"/>
         <Mobilelogo v-else />
       </RouterLink>
     </div>

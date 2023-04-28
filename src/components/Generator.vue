@@ -111,7 +111,7 @@ export default {
           type="text"
           :value="password"
           readonly
-          class="border-[3px] border-myBlack rounded-lg text-xl py-2 px-4 font-semibold text-center w-full drop-shadow-md"
+          class="border-[3px] border-myBlack rounded-lg text-lg md:text-xl py-2 px-4 font-semibold text-center w-full drop-shadow-md"
         />
       </div>
     </div>

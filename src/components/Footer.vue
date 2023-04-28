@@ -20,7 +20,7 @@ const width = ref(window.innerWidth);
           href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@generated.pw"
           target="_blank"
         >
-          <IconMail v-if="width >= 600" />
+          <IconMail v-if="width >= 640" />
           <span v-else>Contact</span>
         </a>
       </span>
