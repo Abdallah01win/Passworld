@@ -7,9 +7,9 @@ import Generator from "../components/Generator.vue";
     <Generator />
 
     <section
-      class="bg-myGold-100 border-[3px] border-myBlack rounded-lg sm:w-4/6 max-sm:px-6 py-4 px-6 my-12 relative bottomShadow"
+      class="bg-myGold-100 border-[3px] border-myBlack rounded-lg mx-6 md:mx-0 md:w-4/6 py-7 md:py-4 px-4 md:px-6 mt-20 mb-12 md:mt-12 md:mb-12 relative bottomShadow"
     >
-      <div class="font-bold /text-lg mb-1">
+      <div class="font-bold mb-4 md:mb-1">
         Avoid being hacked using Generated.PW
       </div>
       <p class="text-xs sm:w-[90%]">
@@ -22,7 +22,7 @@ import Generator from "../components/Generator.vue";
       <img
         src="../assets/lightbullb.png"
         alt="lightbullb"
-        class="w-36 absolute top-[-70px] right-[-60px]"
+        class="w-32 md:w-36 absolute top-[-56px] md:top-[-70px] right-[-20px] md:right-[-60px]"
       />
     </section>
   </main>

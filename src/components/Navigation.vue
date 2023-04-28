@@ -2,13 +2,17 @@
 import { RouterLink } from "vue-router";
 import Logo from "./Logo.vue";
 import IconUsa from "./icons/IconUsa.vue";
+import Mobilelogo from "./icons/Mobilelogo.vue";
+import { ref } from "vue";
+const width = ref(window.innerWidth);
 </script>
 <template>
-  <nav class="flex items-center justify-between px-8">
+  <nav class="flex items-center justify-between py-4 px-6 md:px-8">
     <div>
-      <!-- <RouterLink to="/">
-        <Logo />
-      </RouterLink> -->
+      <RouterLink to="/">
+        <Logo v-if="width >= 600"/>
+        <Mobilelogo v-else />
+      </RouterLink>
     </div>
     <button
       class="bg-white border-[3px] p-[2px] border-myBlack boxShadow flex items-center right-radious"

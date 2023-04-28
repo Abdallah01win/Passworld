@@ -23,7 +23,7 @@ module.exports = {
           300: '#FAC82F',
         },
         'myRed': '#FF0F00',
-        'myGreen': '#07BB1F',
+        'myGreen': '#01DC2C',
         'myBlack': "#1F1F1F",
       }
     },

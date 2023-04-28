@@ -90,9 +90,9 @@ export default {
 
 <template>
   <div class="text-center sm:w-[45%] flex flex-col gap-y-4 max-sm:px-6">
-    <div class="my-3">
+    <div class="my-6 md:my-3">
       <h2
-        class="text-4xl font-bold font-rum mb-5"
+        class="text-3xl md:text-4xl font-bold font-rum mb-3 md:mb-5"
         :class="{
           'text-myRed': passwordLength < 10,
           'text-myGold-200': passwordLength < 20,
@@ -124,7 +124,7 @@ export default {
         />
       </div>
     </div>
-    <div class="w-full flex items-center flex-wrap gap-y-4 justify-between my-3">
+    <div class="w-full grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gao-y-6 text-xl md:text-base my-3">
       <label class="flex items-center gap-3 cursor-pointer"
         ><input
           type="checkbox"
@@ -169,7 +169,7 @@ export default {
         <button
           @click="copyToClipboard"
           class="bottomShadow py-2 px-4 font-bold w-full bg-myPurple-100 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
-          :class="{ 'bg-myGreen/100': copied }"
+          :class="{ 'bg-myGreen': copied }"
           :disabled="copied"
         >
           <transition name="fade" mode="out-in">
@@ -266,7 +266,7 @@ input[type="checkbox"]:active{
   transition: all ease-in 150ms;
 }
 input[type="checkbox"]:checked{
-  background-color: #07BB1F;
+  background-color: #01DC2C;
 }
 input[type="checkbox"]:checked::after{
   display: block;
