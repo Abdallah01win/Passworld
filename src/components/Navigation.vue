@@ -10,12 +10,12 @@ const width = ref(window.innerWidth);
   <nav class="flex items-center justify-between max-sm:py-4 px-6 md:px-8">
     <div>
       <RouterLink to="/">
-        <Logo v-if="width >= 640"/>
+        <Logo v-if="width >= 640" class="sm:w-[50%] sm:h-[50%] md:w-[65%] md:h-[65%] lg:w-[80%] lg:h-[80%]"/>
         <Mobilelogo v-else />
       </RouterLink>
     </div>
     <button
-      class="bg-white border-[3px] p-[2px] border-myBlack boxShadow flex items-center right-radious"
+      class="bg-white border-[3px] p-[2px] border-myBlack boxShadow flex items-center right-radious active:translate-y-[2px] transition-all"
     >
       <span>
         <IconUsa />

@@ -5,17 +5,17 @@ const width = ref(window.innerWidth);
 </script>
 <template>
   <div
-    class="flex max-sm:flex-col-reverse items-start md:items-center text-sm justify-between bg-myPurple-200 text-white border-t-4 border-myBlack py-3 px-6 md:px-8 mt-auto"
+    class="flex max-sm:flex-col-reverse items-start md:items-center text-sm justify-between bg-myPurple-200 text-white border-t-4 border-myBlack py-3 px-6 md:px-8 mt-auto relative"
   >
     <div>Copyright &#169; AH 1444</div>
-    <span class="hidden md:block">
+    <span class="hidden sm:block">
       <img src="../assets/morocode.svg" alt="" />
     </span>
     <div
       class="flex max-sm:flex-col-reverse items-start md:items-center justify-between"
     >
       <span>Privacy Policy</span>
-      <span class="md:ml-5">
+      <span class="sm:ml-5">
         <a
           href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@generated.pw"
           target="_blank"
@@ -24,6 +24,9 @@ const width = ref(window.innerWidth);
           <span v-else>Contact</span>
         </a>
       </span>
+    </div>
+    <div v-if="width <= 640" class="absolute top-[50%] right-0 translate-y-[-50%] pr-8">
+      <img src="../assets/morocode.svg" alt="" class="w-10"/>
     </div>
   </div>
 </template>

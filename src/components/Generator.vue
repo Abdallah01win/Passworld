@@ -93,7 +93,7 @@ export default {
 </script>
 
 <template>
-  <div class="text-center sm:w-[45%] flex flex-col gap-y-4 max-sm:px-6">
+  <div class="text-center md:w-[60%] lg:w-[50%] xl:w-[45%] flex flex-col gap-y-4 max-sm:px-6">
     <div class="my-6 md:my-3">
       <h2
         class="text-3xl md:text-4xl font-bold font-rum mb-3 md:mb-5"
@@ -129,7 +129,7 @@ export default {
       </div>
     </div>
     <div
-      class="w-full grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gao-y-6 text-xl md:text-base my-3"
+      class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 md:gao-y-6 text-xl md:text-base my-3"
     >
       <label class="flex items-center gap-3 cursor-pointer"
         ><input type="checkbox" v-model="includeNumbers" /> Numbers</label
@@ -148,7 +148,7 @@ export default {
     </div>
     <div class="flex items-center justify-center w-full mt-3">
       <div
-        class="flex items-center w-full max-md:flex-wrap max-sm:gap-y-6 sm:gap-x-6"
+        class="flex items-center w-full max-md:flex-wrap max-md:gap-y-6 sm:gap-x-6"
       >
         <button
           @click="generatePassword"
