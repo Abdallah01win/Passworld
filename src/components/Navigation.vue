@@ -7,7 +7,7 @@ import { ref } from "vue";
 const width = ref(window.innerWidth);
 </script>
 <template>
-  <nav class="flex items-center justify-between max-sm:py-4 px-6 md:px-8">
+  <nav class="flex items-center justify-between max-md:py-4 px-6 md:px-8">
     <div>
       <RouterLink to="/">
         <Logo v-if="width >= 640" class="sm:w-[50%] sm:h-[50%] md:w-[65%] md:h-[65%] lg:w-[80%] lg:h-[80%]"/>
@@ -15,7 +15,7 @@ const width = ref(window.innerWidth);
       </RouterLink>
     </div>
     <button
-      class="bg-white border-[3px] p-[2px] border-myBlack boxShadow flex items-center right-radious active:translate-y-[2px] transition-all"
+      class="bg-white border-[3px] p-[2px] border-myBlack boxShadow flex gap-x-2 items-center right-radious active:translate-y-[2px] transition-all"
     >
       <span>
         <IconUsa />
