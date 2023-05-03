@@ -1,5 +1,5 @@
 <script>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 
 export default {
   setup() {
@@ -72,7 +72,18 @@ export default {
     };
 
     onMounted(() => {
-      generatePassword()
+      generatePassword();
+    });
+
+    const optionsToWatch = [
+      passwordLength,
+      includeNumbers,
+      includeSymbols,
+      includeLowercase,
+      includeUppercase,
+    ];
+    optionsToWatch.forEach((option) => {
+      watch(option, generatePassword);
     });
 
     return {
@@ -93,7 +104,9 @@ export default {
 </script>
 
 <template>
-  <div class="text-center md:w-[60%] lg:w-[50%] xl:w-[45%] flex flex-col gap-y-4 max-sm:px-6">
+  <div
+    class="text-center md:w-[60%] lg:w-[50%] xl:w-[45%] flex flex-col gap-y-4 max-sm:px-6"
+  >
     <div class="my-6 md:my-3">
       <h2
         class="text-3xl md:text-4xl font-bold font-rum mb-3 md:mb-5"
@@ -163,7 +176,7 @@ export default {
         <button
           @click="copyToClipboard"
           class="bottomShadow py-2 px-4 font-bold w-full bg-myPurple-100 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
-          :class="{ 'bg-myGreen/100': copied }"
+          :class="{ 'bg-myGreen': copied }"
           :disabled="copied"
         >
           <transition name="fade" mode="out-in">
