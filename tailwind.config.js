@@ -6,7 +6,6 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sakemoru': ['Sake Moru', 'url("~/assets/fonts/SakeMoru-Regular.otf")'],
       rum: ['"Rum Raisin"', 'sans-serif'],
       plexMono: ['"IBM Plex Mono"', 'sans-serif'],
     },
