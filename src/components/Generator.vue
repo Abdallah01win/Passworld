@@ -214,7 +214,7 @@ export default {
           </button>
           <button
             @click="copyToClipboard"
-            class="bottomShadow py-2 px-4 font-bold w-full bg-myPurple-100 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
+            class="bottomShadow py-2 px-4 font-bold w-full border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
             :class="{ 'bg-myGreen': copied, 'bg-myPurple-100': !copied }"
             :disabled="copied"
           >
