@@ -17,7 +17,7 @@ const width = ref(window.innerWidth);
       <span>Privacy Policy</span>
       <span class="sm:ml-5">
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@generated.pw"
+          href="mailto:hello@generated.pw"
           target="_blank"
         >
           <IconMail v-if="width >= 640" />
