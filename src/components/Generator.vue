@@ -1,5 +1,5 @@
 <script>
-import { ref, computed, onMounted, watch } from "vue";
+import { ref, computed, onMounted, watch, watchEffect } from "vue";
 
 export default {
   setup() {
@@ -25,13 +25,26 @@ export default {
       }
     });
 
-    const atLeastOneChecked = computed(() => {
-      return (
-        includeNumbers.value ||
-        includeSymbols.value ||
-        includeLowercase.value ||
-        includeUppercase.value
-      );
+    const checkboxes = [
+      includeNumbers,
+      includeSymbols,
+      includeLowercase,
+      includeUppercase,
+    ];
+
+    const numCheckedCheckboxes = computed(() => {
+      return checkboxes.filter((checkbox) => checkbox.value).length;
+    });
+
+    watchEffect(() => {
+      if (numCheckedCheckboxes.value === 1) {
+        const lastCheckedCheckbox = checkboxes.find(
+          (checkbox) => checkbox.value
+        );
+        lastCheckedCheckbox.disabled = true;
+      } else {
+        checkboxes.forEach((checkbox) => (checkbox.disabled = false));
+      }
     });
 
     const generatePassword = () => {
@@ -94,7 +107,7 @@ export default {
       generatePassword,
       copyToClipboard,
       passwordStrength,
-      atLeastOneChecked,
+      numCheckedCheckboxes,
       copied,
     };
   },
@@ -143,18 +156,36 @@ export default {
       class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 md:gap-y-6 text-xl md:text-base my-8"
     >
       <label class="flex items-center gap-3 cursor-pointer w-fit"
-        ><input type="checkbox" v-model="includeNumbers" /> Numbers</label
+        ><input
+          type="checkbox"
+          v-model="includeNumbers"
+          :disabled="numCheckedCheckboxes === 1 && includeNumbers"
+        />
+        Numbers</label
       >
       <label class="flex items-center gap-3 cursor-pointer w-fit"
-        ><input type="checkbox" v-model="includeLowercase" />
+        ><input
+          type="checkbox"
+          v-model="includeLowercase"
+          :disabled="numCheckedCheckboxes === 1 && includeLowercase"
+        />
         Lowercase
       </label>
       <label class="flex items-center gap-3 cursor-pointer w-fit"
-        ><input type="checkbox" v-model="includeUppercase" />
+        ><input
+          type="checkbox"
+          v-model="includeUppercase"
+          :disabled="numCheckedCheckboxes === 1 && includeUppercase"
+        />
         Uppercase
       </label>
       <label class="flex items-center gap-3 cursor-pointer w-fit"
-        ><input type="checkbox" v-model="includeSymbols" /> Symbols</label
+        ><input
+          type="checkbox"
+          v-model="includeSymbols"
+          :disabled="numCheckedCheckboxes === 1 && includeSymbols"
+        />
+        Symbols</label
       >
     </div>
     <div class="flex items-center justify-center w-full mt-3">
@@ -163,7 +194,6 @@ export default {
       >
         <button
           @click="generatePassword"
-          :disabled="!atLeastOneChecked"
           class="bottomShadow py-2 px-4 font-bold flex items-center justify-center gap-x-3 w-full bg-myGold-300 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
         >
           <span>
