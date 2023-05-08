@@ -115,127 +115,139 @@ export default {
 </script>
 
 <template>
-  <div
-    class="text-center md:w-[64%] lg:w-[50%] xl:w-[45%] flex flex-col gap-y-4 max-sm:px-6"
-  >
-    <div class="my-8 md:my-6">
-      <h2
-        class="text-3xl md:text-4xl font-bold font-rum mb-3 md:mb-5"
-        :class="{
-          'text-myRed': passwordLength < 10,
-          'text-myGold-200': passwordLength < 20,
-          'text-myGreen': passwordLength >= 20,
-        }"
-      >
-        ({{ passwordLength }}) {{ passwordStrength }} Password
-      </h2>
-      <div>
-        <input
-          id="password"
-          type="text"
-          :value="password"
-          readonly
-          class="border-[3px] border-myBlack rounded-lg text-lg md:text-xl py-2 px-4 font-semibold text-center w-full drop-shadow-md"
-        />
-      </div>
-    </div>
-    <div class="flex flex-col space-y-4">
-      <div class="flex items-center space-x-2">
-        <input
-          id="password-length"
-          type="range"
-          v-model="passwordLength"
-          min="1"
-          max="50"
-          step="1"
-          class="w-full appearance-none rounded-lg h-5 bg-myPurple-100 border-[3px] border-myBlack transition-all"
-        />
-      </div>
-    </div>
+  <div class="w-full">
     <div
-      class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 md:gap-y-6 text-xl md:text-base my-8"
+      class="text-center md:w-[64%] lg:w-[50%] xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
     >
-      <label class="flex items-center gap-3 cursor-pointer w-fit"
-        ><input
-          type="checkbox"
-          v-model="includeNumbers"
-          :disabled="numCheckedCheckboxes === 1 && includeNumbers"
-        />
-        Numbers</label
-      >
-      <label class="flex items-center gap-3 cursor-pointer w-fit"
-        ><input
-          type="checkbox"
-          v-model="includeLowercase"
-          :disabled="numCheckedCheckboxes === 1 && includeLowercase"
-        />
-        Lowercase
-      </label>
-      <label class="flex items-center gap-3 cursor-pointer w-fit"
-        ><input
-          type="checkbox"
-          v-model="includeUppercase"
-          :disabled="numCheckedCheckboxes === 1 && includeUppercase"
-        />
-        Uppercase
-      </label>
-      <label class="flex items-center gap-3 cursor-pointer w-fit"
-        ><input
-          type="checkbox"
-          v-model="includeSymbols"
-          :disabled="numCheckedCheckboxes === 1 && includeSymbols"
-        />
-        Symbols</label
-      >
+      <!-- Password input -->
+      <div class="my-10 md:my-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold font-rum mb-3 md:mb-5"
+          :class="{
+            'text-myRed': passwordLength < 10,
+            'text-myGold-200': passwordLength < 20,
+            'text-myGreen': passwordLength >= 20,
+          }"
+        >
+          ({{ passwordLength }}) {{ passwordStrength }} Password
+        </h2>
+        <div>
+          <input
+            id="password"
+            type="text"
+            :value="password"
+            readonly
+            class="border-[3px] border-myBlack rounded-lg text-lg md:text-xl py-2 px-4 font-semibold text-center w-full drop-shadow-md"
+          />
+        </div>
+      </div>
+      <!-- Range -->
+      <div class="flex flex-col space-y-4">
+        <div class="flex items-center space-x-2">
+          <input
+            id="password-length"
+            type="range"
+            v-model="passwordLength"
+            min="1"
+            max="50"
+            step="1"
+            class="w-full appearance-none rounded-lg h-5 bg-myPurple-100 border-[3px] border-myBlack transition-all"
+          />
+        </div>
+      </div>
     </div>
-    <div class="flex items-center justify-center w-full mt-3">
+    <!-- Checkboxes -->
+    <div class="md:w-[64%] lg:w-[55%] xl:w-[50%] max-md:px-6 mx-auto">
       <div
-        class="flex items-center w-full max-md:flex-wrap max-md:gap-y-6 sm:gap-x-6"
+        class="grid grid-cols-2 md:grid-cols-3 lg:flex lg:justify-between gap-y-8 md:gap-y-6 text-xl md:text-base my-8 bg-my"
       >
-        <button
-          @click="generatePassword"
-          class="bottomShadow py-2 px-4 font-bold flex items-center justify-center gap-x-3 w-full bg-myGold-300 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
+        <label class="flex items-center gap-3 cursor-pointer w-fit"
+          ><input
+            type="checkbox"
+            v-model="includeNumbers"
+            :disabled="numCheckedCheckboxes === 1 && includeNumbers"
+          />
+          Numbers</label
         >
-          <span>
-            <img src="../assets/generate.svg" alt="generate" />
-          </span>
-          <span> Generate Password </span>
-        </button>
-        <button
-          @click="copyToClipboard"
-          class="bottomShadow py-2 px-4 font-bold w-full bg-myPurple-100 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
-          :class="{ 'bg-myGreen': copied }"
-          :disabled="copied"
+        <label class="flex items-center gap-3 cursor-pointer w-fit"
+          ><input
+            type="checkbox"
+            v-model="includeLowercase"
+            :disabled="numCheckedCheckboxes === 1 && includeLowercase"
+          />
+          Lowercase
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer w-fit"
+          ><input
+            type="checkbox"
+            v-model="includeUppercase"
+            :disabled="numCheckedCheckboxes === 1 && includeUppercase"
+          />
+          Uppercase
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer w-fit"
+          ><input
+            type="checkbox"
+            v-model="includeSymbols"
+            :disabled="numCheckedCheckboxes === 1 && includeSymbols"
+          />
+          Symbols</label
         >
-          <transition name="fade" mode="out-in">
-            <span
-              v-if="!copied"
-              class="flex items-center justify-center gap-x-3"
-            >
-              <span>
-                <img
-                  src="../assets/copy.svg"
-                  alt="copy"
-                  class="transition-all"
-                />
-              </span>
-              <span> Copy Password </span>
+      </div>
+    </div>
+    <!-- Buttons -->
+    <div
+      class="text-center md:w-[64%] lg:w-[50%] xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
+    >
+      <div class="flex items-center justify-center w-full mt-3">
+        <div
+          class="flex items-center w-full max-md:flex-wrap max-md:gap-y-6 sm:gap-x-6"
+        >
+          <button
+            @click="generatePassword"
+            class="bottomShadow py-2 px-4 font-bold flex items-center justify-center gap-x-3 w-full bg-myGold-300 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
+          >
+            <span>
+              <img src="../assets/generate.svg" alt="generate" />
             </span>
-            <span
-              v-else
-              class="flex items-center justify-center py-1 gap-x-3 text-white"
-            >
-              <span>
-                <img
-                  src="../assets/checked.svg"
-                  alt="copy"
-                  class="transition-all"
-                />
+            <span> Generate Password </span>
+          </button>
+          <button
+            @click="copyToClipboard"
+            class="bottomShadow py-2 px-4 font-bold w-full bg-myPurple-100 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
+            :class="{ 'bg-myGreen': copied, 'bg-myPurple-100': !copied }"
+            :disabled="copied"
+          >
+            <transition name="fade" mode="out-in">
+              <span
+                v-if="!copied"
+                class="flex items-center justify-center gap-x-3"
+              >
+                <span>
+                  <img
+                    src="../assets/copy.svg"
+                    alt="copy"
+                    class="transition-all"
+                  />
+                </span>
+                <span> Copy Password </span>
               </span>
-              <span> Password Copied </span>
-            </span>
-          </transition>
-        </button>
+              <span
+                v-else
+                class="flex items-center justify-center py-1 gap-x-3 text-white"
+              >
+                <span>
+                  <img
+                    src="../assets/checked.svg"
+                    alt="copy"
+                    class="transition-all"
+                  />
+                </span>
+                <span> Password Copied </span>
+              </span>
+            </transition>
+          </button>
+        </div>
       </div>
     </div>
   </div>
