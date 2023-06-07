@@ -11,19 +11,22 @@ module.exports = {
     },
     extend: {
       colors:{
-        'background': "#F9F5F2",
+        'background': "#FFFFFF",
         'myPurple': {
-          100: "#CCB3F5",
-          200: "#632DBC",
+          100: "#CB9BFB",
         },
         'myGold': {
-          100: '#FFEBCF',
-          200: '#F89828',
-          300: '#FAC82F',
+          100: '#F9FD91',
+        },
+        'myGray': {
+          100: '#909090',
+          200: '#F4F2F0',
         },
         'myRed': '#FF0F00',
-        'myGreen': '#01DC2C',
-        'myBlack': "#1F1F1F",
+        'myGreen': '#5FCCA0',
+        'myGreen2': '#B7F3B1',
+        'myGreen3': '#C7FD90',
+        'myBlack': "#0A0A0A",
       }
     },
   },

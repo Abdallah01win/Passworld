@@ -117,7 +117,7 @@ export default {
 <template>
   <div class="w-full">
     <div
-      class="text-center md:w-[64%] lg:w-[50%] xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
+      class="text-center /md:w-[64%] /lg:w-[50%] /xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
     >
       <!-- Password input -->
       <div class="my-10 md:my-8">
@@ -157,7 +157,7 @@ export default {
       </div>
     </div>
     <!-- Checkboxes -->
-    <div class="md:w-[64%] lg:w-[55%] xl:w-[50%] max-md:px-6 mx-auto">
+    <div class="/md:w-[64%] /lg:w-[55%] /xl:w-[50%] max-md:px-6 mx-auto">
       <div
         class="grid grid-cols-2 md:grid-cols-3 lg:flex lg:justify-between gap-y-8 md:gap-y-6 text-xl md:text-base my-8 bg-my"
       >
@@ -197,7 +197,7 @@ export default {
     </div>
     <!-- Buttons -->
     <div
-      class="text-center md:w-[64%] lg:w-[50%] xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
+      class="text-center /md:w-[64%] /lg:w-[50%] /xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
     >
       <div class="flex items-center justify-center w-full mt-3">
         <div
