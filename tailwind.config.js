@@ -6,8 +6,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      rum: ['"Rum Raisin"', 'sans-serif'],
-      plexMono: ['"IBM Plex Mono"', 'sans-serif'],
+      //rum: ['"Rum Raisin"', 'sans-serif'],
+      Poppins: ['"Poppins"', 'sans-serif'],
+      Montserrat: ['"Montserrat"', 'sans-serif'],
     },
     extend: {
       colors:{

@@ -1,10 +1,14 @@
 <script setup>
 import Generator from "../components/Generator.vue";
+import Navigation from "../components/Navigation.vue";
+import Hero from '../components/Hero.vue';
 </script>
 
 <template>
-  <main class="flex mx-auto flex-col items-center">
-    <Generator />
+  <main class="xl:max-w-[1024px] mx-auto">
+    <Navigation />
+    <Hero />
+    <!-- <Generator /> -->
   </main>
 </template>
 

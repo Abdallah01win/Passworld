@@ -115,7 +115,7 @@ export default {
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="/w-full xl:max-w-[1024px] mx-auto">
     <div
       class="text-center /md:w-[64%] /lg:w-[50%] /xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
     >
