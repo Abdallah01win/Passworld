@@ -6,7 +6,7 @@
         The strongest passwords, effortlessly.
       </h1>
       <p class="w-[80%] leading-relaxed text-base font-Montserrat my-6">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et voluptates
+        Take controle over your your randomly generated passwords. Et voluptates
         expedita consequatur voluptatum necessitatibus minima praesentium nulla
         amet!
       </p>

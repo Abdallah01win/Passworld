@@ -122,7 +122,7 @@ export default {
       <!-- Password input -->
       <div class="my-10 md:my-8">
         <h2
-          class="text-3xl md:text-4xl font-bold font-rum mb-3 md:mb-5"
+          class="text-3xl md:text-4xl font-bold mb-3 md:mb-5"
           :class="{
             'text-myRed': passwordLength < 10,
             'text-myGold-200': passwordLength < 20,
@@ -137,7 +137,7 @@ export default {
             type="text"
             :value="password"
             readonly
-            class="border-[3px] border-myBlack rounded-lg text-lg md:text-xl py-2 px-4 font-semibold text-center w-full drop-shadow-md"
+            class="border border-myBlack rounded-lg text-lg md:text-xl py-2 px-4 font-semibold text-center w-full "
           />
         </div>
       </div>
@@ -151,13 +151,13 @@ export default {
             min="1"
             max="50"
             step="1"
-            class="w-full appearance-none rounded-lg h-5 bg-myPurple-100 border-[3px] border-myBlack transition-all"
+            class="w-full appearance-none rounded-lg h-5 bg-myPurple-100 border border-myBlack transition-all"
           />
         </div>
       </div>
     </div>
     <!-- Checkboxes -->
-    <div class="/md:w-[64%] /lg:w-[55%] /xl:w-[50%] max-md:px-6 mx-auto">
+    <div class="mx-auto">
       <div
         class="grid grid-cols-2 md:grid-cols-3 lg:flex lg:justify-between gap-y-8 md:gap-y-6 text-xl md:text-base my-8 bg-my"
       >
@@ -203,7 +203,7 @@ export default {
         <div
           class="flex items-center w-full max-md:flex-wrap max-md:gap-y-6 sm:gap-x-6"
         >
-          <button
+          <!-- <button
             @click="generatePassword"
             class="bottomShadow py-2 px-4 font-bold flex items-center justify-center gap-x-3 w-full bg-myGold-300 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
           >
@@ -211,8 +211,11 @@ export default {
               <img src="../assets/generate.svg" alt="generate" />
             </span>
             <span> Generate Password </span>
-          </button>
-          <button
+          </button> -->
+          <button  @click="generatePassword" class="bg-myGreen3 text-myBlack py-4 px-16 rounded-lg w-full border border-myBlack">Generate Password</button>
+          <button @click="copyToClipboard" class="bg-transparent text-myBlack border border-myBlack py-4 px-16 rounded-lg w-full border border-background">Copy Password</button>
+
+          <!-- <button
             @click="copyToClipboard"
             class="bottomShadow py-2 px-4 font-bold w-full border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
             :class="{ 'bg-myGreen': copied, 'bg-myPurple-100': !copied }"
@@ -246,7 +249,7 @@ export default {
                 <span> Password Copied </span>
               </span>
             </transition>
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
@@ -268,22 +271,22 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 32px;
   height: 32px;
-  background-color: #fac82f;
-  border: 3px solid #1f1f1f;
+  background-color: #F9FD91;
+  border: 1px solid #0A0A0A;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px 0px #1f1f1f;
+  box-shadow: 1px 1px 0px 0px #0A0A0A;
   transform: translateY(-1px);
 }
 
 input[type="range"]::-moz-range-thumb {
   width: 32px;
   height: 32px;
-  background-color: #fac82f;
-  border: 3px solid #1f1f1f;
+  background-color: #F9FD91;
+  border: 1px solid #0A0A0A;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 1px 1px 0px 0px #1f1f1f;
+  box-shadow: 1px 1px 0px 0px #0A0A0A;
   transform: translateY(-1px);
 }
 
@@ -292,10 +295,10 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   height: 27px;
   width: 27px;
-  background-color: #fefefe;
-  border: solid 2px #1f1f1f;
+  background-color: #FFFFFF;
+  border: solid 1px #0A0A0A;
   border-radius: 8px;
-  box-shadow: 2px 2px 0px 0px #1f1f1f;
+  box-shadow: 1px 1px 0px 0px #0A0A0A;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -313,9 +316,10 @@ input[type="checkbox"]:active {
   transition: all ease-in 150ms;
 }
 input[type="checkbox"]:checked {
-  background-color: #01dc2c;
+  background-color: #C7FD90;
 }
 input[type="checkbox"]:checked::after {
-  display: block;
+  display: grid;
+  place-content: center;
 }
 </style>

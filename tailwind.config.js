@@ -27,6 +27,7 @@ module.exports = {
         'myGreen': '#5FCCA0',
         'myGreen2': '#B7F3B1',
         'myGreen3': '#C7FD90',
+        'myGreen4': '#12edba',
         'myBlack': "#0A0A0A",
       }
     },
