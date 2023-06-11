@@ -115,14 +115,14 @@ export default {
 </script>
 
 <template>
-  <div class="/w-full xl:max-w-[1024px] mx-auto">
+  <div class="rounded-3xl border-2 border-myBlack bg-background py-8 px-6 w-full /w-[330px] /h-[550px]  /text-background ">
     <div
       class="text-center /md:w-[64%] /lg:w-[50%] /xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
     >
       <!-- Password input -->
-      <div class="my-10 md:my-8">
+      <div class="mb-8">
         <h2
-          class="text-3xl md:text-4xl font-bold mb-3 md:mb-5"
+          class="text-xl font-bold mb-3 md:mb-5"
           :class="{
             'text-myRed': passwordLength < 10,
             'text-myGold-200': passwordLength < 20,
@@ -137,7 +137,7 @@ export default {
             type="text"
             :value="password"
             readonly
-            class="border border-myBlack rounded-lg text-lg md:text-xl py-2 px-4 font-semibold text-center w-full "
+            class="border border-myBlack rounded-xl text-lg py-2 px-4 font-semibold text-center w-full "
           />
         </div>
       </div>
@@ -151,7 +151,7 @@ export default {
             min="1"
             max="50"
             step="1"
-            class="w-full appearance-none rounded-lg h-5 bg-myPurple-100 border border-myBlack transition-all"
+            class="w-full appearance-none rounded-lg h-4 bg-[#C7FD90] border border-myBlack transition-all"
           />
         </div>
       </div>
@@ -159,7 +159,7 @@ export default {
     <!-- Checkboxes -->
     <div class="mx-auto">
       <div
-        class="grid grid-cols-2 md:grid-cols-3 lg:flex lg:justify-between gap-y-8 md:gap-y-6 text-xl md:text-base my-8 bg-my"
+        class="grid grid-cols-2 /md:grid-cols-3 /lg:flex /lg:justify-between gap-y-8 /md:gap-y-6 text-sm my-8 bg-my"
       >
         <label class="flex items-center gap-3 cursor-pointer w-fit"
           ><input
@@ -197,11 +197,11 @@ export default {
     </div>
     <!-- Buttons -->
     <div
-      class="text-center /md:w-[64%] /lg:w-[50%] /xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
+      class="text-center flex flex-col gap-y-4 max-md:px-6 mx-auto"
     >
-      <div class="flex items-center justify-center w-full mt-3">
+      <div class="flex items-center justify-center w-full mt-auto">
         <div
-          class="flex items-center w-full max-md:flex-wrap max-md:gap-y-6 sm:gap-x-6"
+          class="flex items-center w-full gap-y-4 flex-wrap"
         >
           <!-- <button
             @click="generatePassword"
@@ -213,7 +213,7 @@ export default {
             <span> Generate Password </span>
           </button> -->
           <button  @click="generatePassword" class="bg-myGreen3 text-myBlack py-4 px-16 rounded-lg w-full border border-myBlack">Generate Password</button>
-          <button @click="copyToClipboard" class="bg-transparent text-myBlack border border-myBlack py-4 px-16 rounded-lg w-full border border-background">Copy Password</button>
+          <!-- <button @click="copyToClipboard" class="bg-transparent text-myBlack border border-myBlack py-4 px-16 rounded-lg w-full">Copy Password</button> -->
 
           <!-- <button
             @click="copyToClipboard"

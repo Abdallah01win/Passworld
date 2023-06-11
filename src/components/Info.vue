@@ -1,4 +1,5 @@
 <script setup>
+import Lock from "./icons/Lock.vue";
 import Pichart from "./icons/Pichart.vue";
 import Shiled from "./icons/Shiled.vue";
 </script>
@@ -36,7 +37,7 @@ import Shiled from "./icons/Shiled.vue";
     </div>
     <div class="flex gap-x-3">
       <div class="flex flex-col items-center justify-between">
-        <div class="p-3 border border-myBlack rounded-full"></div>
+        <Lock class="w-7 fill-myBlack" />
         <hr class="w-px bg-myBlack h-12" />
       </div>
 
