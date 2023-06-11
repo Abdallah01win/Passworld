@@ -115,7 +115,7 @@ export default {
 </script>
 
 <template>
-  <div class="rounded-3xl border-2 border-myBlack bg-background py-8 px-6 w-full /w-[330px] /h-[550px]  /text-background ">
+  <div class="rounded-3xl border border-myBlack bg-background py-8 px-6 w-full /w-[330px] /h-[550px]  /text-background ">
     <div
       class="text-center /md:w-[64%] /lg:w-[50%] /xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
     >
@@ -137,7 +137,7 @@ export default {
             type="text"
             :value="password"
             readonly
-            class="border border-myBlack rounded-xl text-lg py-2 px-4 font-semibold text-center w-full "
+            class="border border-myBlack rounded-xl text-sm py-2 px-4 font-semibold text-center w-full "
           />
         </div>
       </div>
@@ -269,8 +269,8 @@ export default {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background-color: #F9FD91;
   border: 1px solid #0A0A0A;
   border-radius: 8px;
@@ -280,8 +280,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 input[type="range"]::-moz-range-thumb {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background-color: #F9FD91;
   border: 1px solid #0A0A0A;
   border-radius: 8px;

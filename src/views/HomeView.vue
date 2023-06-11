@@ -24,11 +24,11 @@ import Hero from '../components/Hero.vue';
         <button
           class="bg-myBlack text-background rounded-xl py-3 px-10 font-normal"
         >
-          Get Started
+        How does it works
         </button>
-        <button class="border border-myBlack rounded-xl py-3 px-10">
+        <!-- <button class="border border-myBlack rounded-xl py-3 px-10">
           How it works
-        </button>
+        </button> -->
       </div>
     </div>
     <div class="flex justify-center">
