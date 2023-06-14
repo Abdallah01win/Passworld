@@ -22,6 +22,7 @@ module.exports = {
         'myGray': {
           100: '#909090',
           200: '#F4F2F0',
+          300: '#F5F5F4',
         },
         'myRed': '#FF0F00',
         'myGreen': '#5FCCA0',

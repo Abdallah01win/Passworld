@@ -12,10 +12,9 @@ import Hero from '../components/Hero.vue';
       <Hero />
     </div>
   </main>
-  <Info />
   
   <section class="/beam">
-    <div class="xl:max-w-[1024px] mx-auto my-32 grid grid-cols-2 gap-x-6 ">
+    <div class="xl:max-w-[1024px] mx-auto my-20 grid grid-cols-2 gap-x-6 ">
     <div>
       <div class="text-4xl font-bold mb-6 leading-tight">Secure your vertuale life with the strongest passwords.</div>
       <p class="leading-relaxed font-Montserrat mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nobis alias at excepturi corporis perferendis eum totam reiciendis vitae ratione dolorum itaque.</p>
@@ -36,6 +35,8 @@ import Hero from '../components/Hero.vue';
     </div>
   </div>
   </section>
+
+  <Info />
 </template>
 
 

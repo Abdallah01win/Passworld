@@ -9,7 +9,9 @@ import Shiled from "./icons/Shiled.vue";
  <div class="grid grid-cols-3 gap-x-6">
     <div class="flex gap-x-3">
       <div class="flex flex-col items-center justify-between">
-        <Pichart class="w-7 fill-myBlack" />
+        <span class="bg-myGray-300 p-2 rounded-full">
+          <Pichart class="w-6 fill-myBlack" />
+        </span>
         <hr class="w-px bg-myBlack h-12" />
       </div>
 
@@ -23,7 +25,9 @@ import Shiled from "./icons/Shiled.vue";
     </div>
     <div class="flex gap-x-3">
       <div class="flex flex-col items-center justify-between">
-        <Shiled class="w-7 fill-myBlack" />
+        <span class="bg-myGray-300 p-2 rounded-full">
+          <Shiled class="w-6 fill-myBlack" />
+        </span>
         <hr class="w-px bg-myBlack h-12" />
       </div>
 
@@ -37,7 +41,9 @@ import Shiled from "./icons/Shiled.vue";
     </div>
     <div class="flex gap-x-3">
       <div class="flex flex-col items-center justify-between">
-        <Lock class="w-7 fill-myBlack" />
+        <span class="bg-myGray-300 p-2 rounded-full">
+          <Lock class="w-6 fill-myBlack" />
+        </span>
         <hr class="w-px bg-myBlack h-12" />
       </div>
 

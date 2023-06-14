@@ -1,7 +1,13 @@
 <script>
 import { ref, computed, onMounted, watch, watchEffect } from "vue";
+import Copy from "./icons/Copy.vue";
+import Checks from "./icons/Checks.vue";
 
 export default {
+  components: {
+    Copy,
+    Checks
+  },
   setup() {
     const passwordLength = ref(20);
     const password = ref("");
@@ -115,94 +121,61 @@ export default {
 </script>
 
 <template>
-  <div class="rounded-3xl border border-myBlack bg-background py-8 px-6 w-full /w-[330px] /h-[550px]  /text-background ">
-    <div
-      class="text-center /md:w-[64%] /lg:w-[50%] /xl:w-[45%] flex flex-col gap-y-4 max-md:px-6 mx-auto"
-    >
+  <div class="rounded-3xl border border-myBlack bg-background py-8 px-6 w-full boxShadow">
+    <div class="flex flex-col gap-y-4 max-md:px-6 mx-auto font-Montserrat">
       <!-- Password input -->
       <div class="mb-8">
-        <h2
-          class="text-xl font-bold mb-3 md:mb-5"
-          :class="{
-            'text-myRed': passwordLength < 10,
-            'text-myGold-200': passwordLength < 20,
-            'text-myGreen': passwordLength >= 20,
-          }"
-        >
-          ({{ passwordLength }}) {{ passwordStrength }} Password
-        </h2>
+        <div class="flex items-center justify-between mb-3 md:mb-5">
+          <h2 class="text-xl font-bold" :class="{
+            'text-myRed/100': passwordLength < 10,
+            'text-orange-400': passwordLength < 20,
+            'text-green-400': passwordLength >= 20,
+          }">
+            ({{ passwordLength }}) {{ passwordStrength }} Password
+          </h2>
+
+          <span @click="copyToClipboard" class="bg-[#F5F5F4] p-3 rounded-full cursor-pointer hover:bg-gray-200/90"
+            :disabled="copied">
+            <Copy v-if="!copied" class="w-6 fill-myBlack" />
+            <Checks v-else class="w-6 fill-myBlack" />
+          </span>
+        </div>
         <div>
-          <input
-            id="password"
-            type="text"
-            :value="password"
-            readonly
-            class="border border-myBlack rounded-xl text-sm py-2 px-4 font-semibold text-center w-full "
-          />
+          <input id="password" type="text" :value="password" readonly
+            class="border border-myBlack rounded-xl text-sm py-3 px-4 font-semibold text-center w-full boxShadow" />
         </div>
       </div>
       <!-- Range -->
       <div class="flex flex-col space-y-4">
         <div class="flex items-center space-x-2">
-          <input
-            id="password-length"
-            type="range"
-            v-model="passwordLength"
-            min="1"
-            max="50"
-            step="1"
-            class="w-full appearance-none rounded-lg h-4 bg-[#C7FD90] border border-myBlack transition-all"
-          />
+          <input id="password-length" type="range" v-model="passwordLength" min="1" max="50" step="1"
+            class="w-full appearance-none rounded-lg h-4 bg-[#F5F5F4] border border-myBlack transition-all boxShadow" />
         </div>
       </div>
     </div>
     <!-- Checkboxes -->
     <div class="mx-auto">
-      <div
-        class="grid grid-cols-2 /md:grid-cols-3 /lg:flex /lg:justify-between gap-y-8 /md:gap-y-6 text-sm my-8 bg-my"
-      >
-        <label class="flex items-center gap-3 cursor-pointer w-fit"
-          ><input
-            type="checkbox"
-            v-model="includeNumbers"
-            :disabled="numCheckedCheckboxes === 1 && includeNumbers"
-          />
-          Numbers</label
-        >
-        <label class="flex items-center gap-3 cursor-pointer w-fit"
-          ><input
-            type="checkbox"
-            v-model="includeLowercase"
-            :disabled="numCheckedCheckboxes === 1 && includeLowercase"
-          />
+      <div class="grid grid-cols-2 /md:grid-cols-3 /lg:flex /lg:justify-between gap-y-8 /md:gap-y-6 text-sm my-8 bg-my">
+        <label class="flex items-center gap-3 cursor-pointer w-fit"><input type="checkbox" v-model="includeNumbers"
+            :disabled="numCheckedCheckboxes === 1 && includeNumbers" />
+          Numbers</label>
+        <label class="flex items-center gap-3 cursor-pointer w-fit"><input type="checkbox" v-model="includeLowercase"
+            :disabled="numCheckedCheckboxes === 1 && includeLowercase" />
           Lowercase
         </label>
-        <label class="flex items-center gap-3 cursor-pointer w-fit"
-          ><input
-            type="checkbox"
-            v-model="includeUppercase"
-            :disabled="numCheckedCheckboxes === 1 && includeUppercase"
-          />
+        <label class="flex items-center gap-3 cursor-pointer w-fit"><input type="checkbox" v-model="includeUppercase"
+            :disabled="numCheckedCheckboxes === 1 && includeUppercase" />
           Uppercase
         </label>
-        <label class="flex items-center gap-3 cursor-pointer w-fit"
-          ><input
-            type="checkbox"
-            v-model="includeSymbols"
-            :disabled="numCheckedCheckboxes === 1 && includeSymbols"
-          />
-          Symbols</label
-        >
+        <label class="flex items-center gap-3 cursor-pointer w-fit"><input type="checkbox" v-model="includeSymbols"
+            :disabled="numCheckedCheckboxes === 1 && includeSymbols" />
+          Symbols</label>
       </div>
     </div>
     <!-- Buttons -->
-    <div
-      class="text-center flex flex-col gap-y-4 max-md:px-6 mx-auto"
-    >
+    <div class="text-center flex flex-col gap-y-4 max-md:px-6 mx-auto">
       <div class="flex items-center justify-center w-full mt-auto">
-        <div
-          class="flex items-center w-full gap-y-4 flex-wrap"
-        >
+        <div class="flex items-center w-full gap-y-4 flex-wrap">
           <!-- <button
             @click="generatePassword"
             class="bottomShadow py-2 px-4 font-bold flex items-center justify-center gap-x-3 w-full bg-myGold-300 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
@@ -212,7 +185,9 @@ export default {
             </span>
             <span> Generate Password </span>
           </button> -->
-          <button  @click="generatePassword" class="bg-myGreen3 text-myBlack py-4 px-16 rounded-lg w-full border border-myBlack">Generate Password</button>
+          <button @click="generatePassword"
+            class="bg-[#F5F5F4] text-myBlack py-4 px-16 rounded-lg w-full border border-myBlack boxShadow hover:bg-gray-200/90">Generate
+            Password</button>
           <!-- <button @click="copyToClipboard" class="bg-transparent text-myBlack border border-myBlack py-4 px-16 rounded-lg w-full">Copy Password</button> -->
 
           <!-- <button
@@ -261,6 +236,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.5s;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
@@ -271,7 +247,7 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 28px;
   height: 28px;
-  background-color: #F9FD91;
+  background-color: #F5F5F4;
   border: 1px solid #0A0A0A;
   border-radius: 8px;
   cursor: pointer;
@@ -282,7 +258,7 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-moz-range-thumb {
   width: 28px;
   height: 28px;
-  background-color: #F9FD91;
+  background-color: #F5F5F4;
   border: 1px solid #0A0A0A;
   border-radius: 8px;
   cursor: pointer;
@@ -315,11 +291,17 @@ input[type="checkbox"]:active {
   transform: translateY(2px);
   transition: all ease-in 150ms;
 }
+
 input[type="checkbox"]:checked {
-  background-color: #C7FD90;
+  background-color: #F5F5F4;
 }
+
 input[type="checkbox"]:checked::after {
   display: grid;
   place-content: center;
+}
+
+.boxShadow {
+  box-shadow: 1px 1px 0px 0px #0A0A0A;
 }
 </style>
