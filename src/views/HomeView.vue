@@ -3,6 +3,7 @@ import Generator from "../components/Generator.vue";
 import Info from "../components/Info.vue";
 import Navigation from "../components/Navigation.vue";
 import Hero from '../components/Hero.vue';
+import ArrowRight from '../components/icons/ArrowRight.vue';
 </script>
 
 <template>
@@ -13,21 +14,30 @@ import Hero from '../components/Hero.vue';
     </div>
   </main>
   
-  <section class="/beam">
-    <div class="xl:max-w-[1024px] mx-auto my-20 grid grid-cols-2 gap-x-6 ">
+  <section id="generatorSection">
+    <div class="xl:max-w-[1024px] mx-auto py-20 grid grid-cols-2 gap-x-8 ">
     <div>
       <div class="text-4xl font-bold mb-6 leading-tight">Secure your vertuale life with the strongest passwords.</div>
-      <p class="leading-relaxed font-Montserrat mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nobis alias at excepturi corporis perferendis eum totam reiciendis vitae ratione dolorum itaque.</p>
-      <p class="leading-relaxed font-Montserrat mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nobis alias at excepturi corporis perferendis eum totam reiciendis vitae ratione dolorum itaque.</p>
+      <p class="leading-relaxed font-Montserrat mb-4">Coming up with strong, unique passwords can be a challenge. <span class="font-bold uppercase">PassWorld</span> provides an easy and secure way to randomly generate passwords for all of your accounts. With our service, you can generate long, complex passwords that are <span class="font-bold uppercase">impossible</span> to guess.</p>
+      <p class="leading-relaxed font-Montserrat mb-6">Our service is  <span class="font-bold uppercase">free</span> and easy to use. All you have to do is select the length and complexity of the password you want, and our generator will <span class="font-bold uppercase">instantly</span> create a secure password for you. Create one-time passwords for important accounts or use our service to generate an entirely new set of passwords.</p>
       <div class="flex items-center gap-x-4">
-        <button
+        <!-- <button
           class="bg-myBlack text-background rounded-xl py-3 px-10 font-normal"
         >
         How does it works
-        </button>
-        <!-- <button class="border border-myBlack rounded-xl py-3 px-10">
-          How it works
         </button> -->
+        <button class="flex items-center gap-x-3 border border-myBlack rounded-xl py-3 px-10 cursor-default">
+         <span>Try it Now!</span>
+          <span>
+            <ArrowRight class="w-6 fill-myBlack" />
+          </span>
+        </button>
+        <!-- <div class="flex items-center gap-5 pb-1 border-b border-myBlack">
+          <span>Try it Now!</span>
+          <span>
+            <ArrowRight class="w-6 fill-myBlack" />
+          </span>
+        </div> -->
       </div>
     </div>
     <div class="flex justify-center">

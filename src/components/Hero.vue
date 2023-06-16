@@ -6,10 +6,13 @@
         The strongest passwords, effortlessly.
       </h1>
       <p class="w-[80%] leading-relaxed text-base font-Montserrat my-6">
+        Take your account security to the next level. Our highly customizable settings give you that extra peace of mind every time you log in to any of your online accounts.
+      </p>
+      <!-- <p class="w-[80%] leading-relaxed text-base font-Montserrat my-6">
         Take controle over your your randomly generated passwords. Et voluptates
         expedita consequatur voluptatum necessitatibus minima praesentium nulla
         amet!
-      </p>
+      </p> -->
 
       <div class="flex items-center gap-x-8">
         <button
@@ -18,7 +21,7 @@
           Get Started
         </button>
         <button class="border border-myBlack rounded-xl py-3 px-10">
-          How it works
+          Learn More
         </button>
       </div>
     </div>

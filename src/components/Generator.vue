@@ -126,7 +126,7 @@ export default {
       <!-- Password input -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-3 md:mb-5">
-          <h2 class="text-xl font-bold" :class="{
+          <h2 class="text-2xl font-bold" :class="{
             'text-myRed/100': passwordLength < 10,
             'text-orange-400': passwordLength < 20,
             'text-green-400': passwordLength >= 20,
