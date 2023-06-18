@@ -12,7 +12,7 @@
             </li>
         </ul>
         <div class="flex items-center gap-x-6">
-            <button class="border border-myBlack rounded-xl py-3 px-8">Get Started</button>
+            <a href="#generatorSection" class="border border-myBlack rounded-xl py-3 px-8">Get Started</a>
         </div>
     </nav>
 </template>

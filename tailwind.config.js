@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       colors:{
         'background': "#FFFFFF",
+        'myRed': '#FF0F00',
         'myPurple': {
           100: "#CB9BFB",
         },
@@ -24,7 +25,6 @@ module.exports = {
           200: '#F4F2F0',
           300: '#F5F5F4',
         },
-        'myRed': '#FF0F00',
         'myGreen': '#5FCCA0',
         'myGreen2': '#B7F3B1',
         'myGreen3': '#C7FD90',

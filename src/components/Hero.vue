@@ -15,11 +15,11 @@
       </p> -->
 
       <div class="flex items-center gap-x-8">
-        <button
+        <a href="#generatorSection"
           class="bg-myBlack text-background rounded-xl py-3 px-10 font-normal"
         >
           Get Started
-        </button>
+      </a>
         <button class="border border-myBlack rounded-xl py-3 px-10">
           Learn More
         </button>
