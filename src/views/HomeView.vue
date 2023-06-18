@@ -26,7 +26,7 @@ import ArrowRight from '../components/icons/ArrowRight.vue';
         >
         How does it works
         </button> -->
-        <button class="flex items-center gap-x-3 border border-myBlack rounded-xl py-3 px-10 cursor-default">
+        <button class="boxShadow flex items-center gap-x-3 border border-myBlack rounded-xl py-3 px-10 cursor-default">
          <span>Try it Now!</span>
           <span>
             <ArrowRight class="w-6 fill-myBlack" />
@@ -54,6 +54,9 @@ import ArrowRight from '../components/icons/ArrowRight.vue';
 .clip {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 
+}
+.boxShadow {
+  box-shadow: 1px 1px 0px 0px #0A0A0A;
 }
 
 .mesh {
