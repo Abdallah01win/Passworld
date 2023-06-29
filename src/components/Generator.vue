@@ -126,11 +126,10 @@ export default {
       <!-- Password input -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-3 md:mb-5">
-          <h2 class="text-2xl font-bold"
-          :class="{
+          <h2 class="text-2xl font-bold" :class="{
             'text-red-600': passwordLength < 10,
             'text-orange-400': passwordLength < 20,
-            'text-myGreen': passwordLength >= 20,
+            'text-[#5FCCA0]': passwordLength >= 20,
           }">
             ({{ passwordLength }}) {{ passwordStrength }} Password
           </h2>
@@ -177,55 +176,9 @@ export default {
     <div class="text-center flex flex-col gap-y-4 max-md:px-6 mx-auto">
       <div class="flex items-center justify-center w-full mt-auto">
         <div class="flex items-center w-full gap-y-4 flex-wrap">
-          <!-- <button
-            @click="generatePassword"
-            class="bottomShadow py-2 px-4 font-bold flex items-center justify-center gap-x-3 w-full bg-myGold-300 border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
-          >
-            <span>
-              <img src="../assets/generate.svg" alt="generate" />
-            </span>
-            <span> Generate Password </span>
-          </button> -->
           <button @click="generatePassword"
-            class="bg-[#F5F5F4] text-myBlack py-4 px-16 rounded-lg w-full border border-myBlack boxShadow hover:bg-gray-200/90">Generate
+            class="bg-myGreen text-myBlack py-4 px-16 rounded-lg w-full border border-myBlack boxShadow">Generate
             Password</button>
-          <!-- <button @click="copyToClipboard" class="bg-transparent text-myBlack border border-myBlack py-4 px-16 rounded-lg w-full">Copy Password</button> -->
-
-          <!-- <button
-            @click="copyToClipboard"
-            class="bottomShadow py-2 px-4 font-bold w-full border-[3px] border-myBlack boxShadow rounded-lg active:translate-y-[4px] transition-all"
-            :class="{ 'bg-myGreen': copied, 'bg-myPurple-100': !copied }"
-            :disabled="copied"
-          >
-            <transition name="fade" mode="out-in">
-              <span
-                v-if="!copied"
-                class="flex items-center justify-center gap-x-3"
-              >
-                <span>
-                  <img
-                    src="../assets/copy.svg"
-                    alt="copy"
-                    class="transition-all"
-                  />
-                </span>
-                <span> Copy Password </span>
-              </span>
-              <span
-                v-else
-                class="flex items-center justify-center py-1 gap-x-3 text-white"
-              >
-                <span>
-                  <img
-                    src="../assets/checked.svg"
-                    alt="copy"
-                    class="transition-all"
-                  />
-                </span>
-                <span> Password Copied </span>
-              </span>
-            </transition>
-          </button> -->
         </div>
       </div>
     </div>
