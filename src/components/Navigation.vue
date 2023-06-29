@@ -1,9 +1,9 @@
 <script setup>
-
+import Gloab from "./icons/Gloab.vue";
 </script>
 <template>
     <nav class="xl:max-w-[1024px] mx-auto py-5 flex items-center justify-between">
-        <div class="font-semibold text-lg">PassWorld</div>
+        <div class="font-semibold uppercase text-lg flex items-center">Passw<Gloab class="w-5 h-5"/>rld</div>
         <ul class="flex items-center gap-x-6">
             <li class="cursor-pointer">
                 <a href="#">Home</a>
