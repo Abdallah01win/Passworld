@@ -31,7 +31,7 @@ import Footer from '../components/Footer.vue';
       </div>
     </div>
     <div class="flex justify-center">
-      <Generator class=""/>
+      <Generator />
     </div>
   </div>
   </section>

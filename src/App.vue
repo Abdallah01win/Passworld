@@ -1,6 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import Footer from "./components/Footer.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
@@ -8,6 +7,7 @@ import Footer from "./components/Footer.vue";
     <RouterView />
   </main>
 </template>
+
 <style>
 .clip {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
