@@ -1,32 +1,31 @@
 <script setup>
-import IconMail from "./icons/IconMail.vue";
-import { ref } from "vue";
-const width = ref(window.innerWidth);
+import Twitter from './icons/Logos/Twitter.vue';
+import Github from './icons/Logos/Github.vue';
+import Linkedin from './icons/Logos/Linkedin.vue';
 </script>
 <template>
-  <div
-    class="flex max-sm:flex-col-reverse items-start md:items-center text-sm justify-between bg-myPurple-200 text-white border-t-4 border-myBlack py-3 px-6 md:px-8 mt-auto relative"
-  >
-    <div>Copyright &#169; AH 1444</div>
-    <span class="hidden sm:block">
-      <img src="../assets/morocode.svg" alt="" />
-    </span>
-    <div
-      class="flex max-sm:flex-col-reverse items-start md:items-center justify-between"
-    >
-      <span>Privacy Policy</span>
-      <span class="sm:ml-5">
-        <a
-          href="mailto:hello@generated.pw"
-          target="_blank"
-        >
-          <IconMail v-if="width >= 640" />
-          <span v-else>Contact</span>
-        </a>
-      </span>
-    </div>
-    <div v-if="width <= 640" class="absolute top-[50%] right-0 translate-y-[-50%] pr-8">
-      <img src="../assets/morocode.svg" alt="" class="w-10"/>
-    </div>
-  </div>
+    <footer class=" /text-background">
+        <div class="py-4 flex items-center justify-between xl:max-w-[1024px] mx-auto border-t border-myBlack/40">
+            <div class="font-normal">2023 <span class="text-base">&#169;</span> By Abdallah Bari</div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://twitter.com/AbdallahDev01 " target="_blank" rel="noopener noreferrer" class="flex ">
+
+                    <span class="p-2 bg-myGray-300 rounded-full hover:bg-gray-200/90">
+                        <Twitter class="w-5 fill-myBlack" />
+                    </span>
+                </a>
+                <a href="https://github.com/Abdallah01win" target="_blank" rel="noopener noreferrer" class="flex ">
+                    <span class="p-2 bg-myGray-300 rounded-full hover:bg-gray-200/90">
+                        <Github class="w-5 fill-myBlack" />
+                    </span>
+                </a>
+                <a href="https://www.linkedin.com/in/abdallahbari/" target="_blank" rel="noopener noreferrer" class="flex ">
+                    <span class="p-2 bg-myGray-300 rounded-full hover:bg-gray-200/90">
+                        <Linkedin class="w-5 fill-myBlack" />
+                    </span>
+                </a>
+            </div>
+        </div>
+    </footer>
 </template>

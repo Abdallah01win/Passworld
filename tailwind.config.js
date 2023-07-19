@@ -6,24 +6,30 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      rum: ['"Rum Raisin"', 'sans-serif'],
-      plexMono: ['"IBM Plex Mono"', 'sans-serif'],
+      //rum: ['"Rum Raisin"', 'sans-serif'],
+      Poppins: ['"Poppins"', 'sans-serif'],
+      Montserrat: ['"Montserrat"', 'sans-serif'],
     },
     extend: {
       colors:{
-        'background': "#F9F5F2",
+        'background': "#FFFFFF",
+        'myRed': '#FF0F00',
         'myPurple': {
-          100: "#CCB3F5",
-          200: "#632DBC",
+          100: "#CB9BFB",
         },
         'myGold': {
-          100: '#FFEBCF',
-          200: '#F89828',
-          300: '#FAC82F',
+          100: '#F9FD91',
         },
-        'myRed': '#FF0F00',
-        'myGreen': '#01DC2C',
-        'myBlack': "#1F1F1F",
+        'myGray': {
+          100: '#909090',
+          200: '#F4F2F0',
+          300: '#F5F5F4',
+        },
+        'myGreen': '#5FCCA0',
+        'myGreen2': '#B7F3B1',
+        'myGreen3': '#C7FD90',
+        'myGreen4': '#12edba',
+        'myBlack': "#0A0A0A",
       }
     },
   },

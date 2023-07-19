@@ -1,35 +1,41 @@
 <script setup>
 import Generator from "../components/Generator.vue";
+import Info from "../components/Info.vue";
+import Navigation from "../components/Navigation.vue";
+import Hero from '../components/Hero.vue';
+import ArrowRight from '../components/icons/ArrowRight.vue';
+import Footer from '../components/Footer.vue';
 </script>
 
 <template>
-  <main class="flex mx-auto flex-col items-center">
-    <Generator />
-
-    <section
-      class="bg-myGold-100 border-[3px] border-myBlack rounded-lg mx-6 md:mx-0 md:w-4/6 py-7 md:py-4 px-4 md:px-6 mt-24 mb-12 relative bottomShadow"
-    >
-      <div class="font-bold mb-4 md:mb-1">
-        Avoid being hacked using Generated.PW
-      </div>
-      <p class="text-xs sm:w-[90%]">
-        Generated Passwords especially useful for people who have trouble coming
-        up with strong passwords on their own or who use the same password
-        across multiple accounts, which can leave them vulnerable to cyber
-        attacks.
-      </p>
-
-      <img
-        src="../assets/lightbullb.png"
-        alt="lightbullb"
-        class="w-32 md:w-36 absolute top-[-56px] md:top-[-70px] right-[-20px] md:right-[-60px]"
-      />
-    </section>
+  <main class="mesh h-screen relative clip">
+    <Navigation />
+    <div class="w-full absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]">
+      <Hero />
+    </div>
   </main>
-</template>
+  
+  <section id="generatorSection">
+    <div class="xl:max-w-[1024px] mx-auto py-20 grid grid-cols-2 gap-x-8 ">
+    <div>
+      <div class="text-4xl font-bold mb-6 leading-tight">Secure your vertuale life with the strongest passwords.</div>
+      <p class="leading-relaxed font-Montserrat mb-4">Coming up with strong, unique passwords can be a challenge. <span class="font-bold uppercase">PassWorld</span> provides an easy and secure way to randomly generate passwords for all of your accounts. With our service, you can generate long, complex passwords that are <span class="font-bold uppercase">impossible</span> to guess.</p>
+      <p class="leading-relaxed font-Montserrat mb-6">Our service is  <span class="font-bold uppercase">free</span> and easy to use. All you have to do is select the length and complexity of the password you want, and our generator will <span class="font-bold uppercase">instantly</span> create a secure password for you. Create one-time passwords for important accounts or use our service to generate an entirely new set of passwords.</p>
+      <div class="flex items-center gap-x-4">
+        <button class="boxShadow flex items-center gap-x-3 border border-myBlack rounded-xl py-3 px-10 cursor-default">
+         <span>Try it Now!</span>
+          <span>
+            <ArrowRight class="w-6 fill-myBlack" />
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <Generator />
+    </div>
+  </div>
+  </section>
 
-<style scoped>
-.bottomShadow {
-  box-shadow: 0px 5px 0px #1f1f1f;
-}
-</style>
+  <Info />
+  <Footer />
+</template>
