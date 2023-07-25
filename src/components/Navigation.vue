@@ -2,7 +2,7 @@
 import Gloab from "./icons/Gloab.vue";
 </script>
 <template>
-    <nav class="xl:max-w-[1024px] mx-auto py-5 flex items-center justify-between">
+    <nav class="md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-5 flex items-center justify-between">
         <RouterLink to="/" class="font-semibold uppercase text-lg flex items-center">
             Passw<Gloab class="w-5 h-5" />rld
         </RouterLink>

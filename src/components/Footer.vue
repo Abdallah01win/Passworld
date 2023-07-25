@@ -4,8 +4,8 @@ import Github from './icons/Logos/Github.vue';
 import Linkedin from './icons/Logos/Linkedin.vue';
 </script>
 <template>
-    <footer class=" /text-background">
-        <div class="py-4 flex items-center justify-between xl:max-w-[1024px] mx-auto border-t border-myBlack/40">
+    <footer>
+        <div class="md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-4 flex items-center justify-between  border-t border-myBlack/40">
             <div class="font-normal">2023 <span class="text-base">&#169;</span> By Abdallah Bari</div>
 
             <div class="flex items-center gap-4">
