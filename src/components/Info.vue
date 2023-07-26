@@ -4,9 +4,9 @@ import Pichart from "./icons/Pichart.vue";
 import Shiled from "./icons/Shiled.vue";
 </script>
 <template>
-  <section id="infoSection" class="md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto mt-8 my-24 ">
+  <section id="infoSection" class="sm:max-w-[520px] md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto mt-8 my-24 ">
     <div class="md:text-2xl lg:text-3xl text-center font-bold mb-6">What we offer</div>
-    <div class="grid grid-cols-3 gap-x-8">
+    <div class="grid /grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-x-8 max-lg:gap-y-8">
       <div class="flex gap-x-3">
 
         <div>
@@ -37,7 +37,7 @@ import Shiled from "./icons/Shiled.vue";
         </div>
       </div>
 
-      <div class="flex gap-x-3">
+      <div class="flex gap-x-3 /col-span-2">
         <div>
           <div class="flex items-center gap-3  mb-2">
             <span class="bg-myGray-300 p-2 rounded-full">

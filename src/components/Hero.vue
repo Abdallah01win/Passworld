@@ -1,8 +1,8 @@
 
 <template>
-  <section class="md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-12">
+  <section class="max-w-[285px] xs:max-w-[365px]sm:max-w-[520px] md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-12">
     <div class="flex flex-col items-center justify-center text-center">
-      <h1 class="md:text-5xl lg:text-6xl capitalize font-bold leading-tight">
+      <h1 class="text-xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl capitalize font-bold leading-tight">
         The strongest passwords, effortlessly.
       </h1>
       <p class="w-full md:w-[90%] lg:w-[80%] leading-relaxed text-base font-Montserrat my-6">
