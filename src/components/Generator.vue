@@ -121,8 +121,8 @@ export default {
 </script>
 
 <template>
-  <div class="rounded-3xl border border-myBlack bg-background py-8 px-6 w-full boxShadow">
-    <div class="flex flex-col gap-y-4 max-md:px-6 mx-auto font-Montserrat">
+  <div class="rounded-3xl border border-myBlack bg-background py-8 px-8 w-full boxShadow">
+    <div class="flex flex-col gap-y-4 mx-auto font-Montserrat">
       <!-- Password input -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-3 md:mb-5">
@@ -172,8 +172,8 @@ export default {
           Symbols</label>
       </div>
     </div>
-    <!-- Buttons -->
-    <div class="text-center flex flex-col gap-y-4 max-md:px-6 mx-auto">
+    <!-- Button -->
+    <div class="text-center flex flex-col gap-y-4 mx-auto">
       <div class="flex items-center justify-center w-full mt-auto">
         <div class="flex items-center w-full gap-y-4 flex-wrap">
           <button @click="generatePassword"

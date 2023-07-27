@@ -1,8 +1,10 @@
 <script setup>
 import Gloab from "./icons/Gloab.vue";
+import Close from "./icons/Close.vue";
+import MenuLines from "./icons/MenuLines.vue";
 </script>
 <template>
-    <nav class="max-w-[285px] xs:max-w-[365px] sm:max-w-[520px] md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-5 flex items-center justify-between">
+    <nav class="max-w-[300px] xs:max-w-[365px] sm:max-w-[520px] md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-5 flex items-center justify-between">
         <RouterLink to="/" class="font-semibold uppercase text-lg flex items-center">
             Passw<Gloab class="w-5 h-5" />rld
         </RouterLink>
@@ -21,7 +23,7 @@ import Gloab from "./icons/Gloab.vue";
             <a href="#generatorSection" class="border border-myBlack rounded-xl py-3 px-8">Get Started</a>
         </div>
         <div class="max-md:block hidden">
-            X
+            <MenuLines class="w-7 fill-black" />
         </div>
     </nav>
 </template>

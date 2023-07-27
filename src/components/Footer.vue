@@ -5,7 +5,7 @@ import Linkedin from './icons/Logos/Linkedin.vue';
 </script>
 <template>
     <footer>
-        <div class="sm:max-w-[520px] md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-4 flex items-center justify-between  border-t border-myBlack/40">
+        <div class="max-w-[300px] xs:max-w-[365px] sm:max-w-[520px] md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-4 flex max-xs:flex-col max-xs:gap-y-2 items-center justify-between  border-t border-myBlack/40">
             <div class="font-normal">2023 <span class="text-base">&#169;</span> By Abdallah Bari</div>
 
             <div class="flex items-center gap-4">
