@@ -121,28 +121,29 @@ export default {
 </script>
 
 <template>
-  <div class="rounded-3xl border border-myBlack bg-background py-8 px-8 w-full boxShadow">
+  <div class="rounded-3xl border border-myBlack bg-background py-6 sm:py-8 px-5 sm:px-8 w-full boxShadow">
     <div class="flex flex-col gap-y-4 mx-auto font-Montserrat">
       <!-- Password input -->
-      <div class="mb-8">
-        <div class="flex items-center justify-between mb-3 md:mb-5">
-          <h2 class="text-2xl font-bold" :class="{
+      <div class="mb-4 sm:mb-6 md:mb-8">
+        <div class="flex max-sm:flex-col max-sm:order-2 items-center justify-between mb-3 md:mb-5">
+          <h2 class="text-lg sm:text-xl md:text-2xl font-bold" :class="{
             'text-red-600': passwordLength < 10,
             'text-orange-400': passwordLength < 20,
             'text-[#5FCCA0]': passwordLength >= 20,
           }">
             ({{ passwordLength }}) {{ passwordStrength }} Password
           </h2>
-
-          <span @click="copyToClipboard" class="bg-[#F5F5F4] p-3 rounded-full cursor-pointer hover:bg-gray-200/90"
-            :disabled="copied">
-            <Copy v-if="!copied" class="w-6 fill-myBlack" />
-            <Checks v-else class="w-6 fill-myBlack" />
-          </span>
+          <div class="flex ml-auto max-sm:order-1">
+            <span @click="copyToClipboard" class="bg-[#F5F5F4] p-3 rounded-full cursor-pointer hover:bg-gray-200/90"
+              :disabled="copied">
+              <Copy v-if="!copied" class="w-6 fill-myBlack" />
+              <Checks v-else class="w-6 fill-myBlack" />
+            </span>
+          </div>
         </div>
         <div>
           <input id="password" type="text" :value="password" readonly
-            class="border border-myBlack rounded-xl text-sm py-3 px-4 font-semibold text-center w-full boxShadow" />
+            class="border border-myBlack rounded-xl text-xs sm:text-sm py-3 px-4 font-semibold text-center w-full boxShadow" />
         </div>
       </div>
       <!-- Range -->
@@ -173,14 +174,10 @@ export default {
       </div>
     </div>
     <!-- Button -->
-    <div class="text-center flex flex-col gap-y-4 mx-auto">
-      <div class="flex items-center justify-center w-full mt-auto">
-        <div class="flex items-center w-full gap-y-4 flex-wrap">
-          <button @click="generatePassword"
-            class="bg-myGreen text-myBlack py-4 px-16 rounded-lg w-full border border-myBlack boxShadow">Generate
-            Password</button>
-        </div>
-      </div>
+    <div class="flex items-center w-full gap-y-4 flex-wrap">
+      <button @click="generatePassword"
+        class="bg-myGreen text-myBlack py-4 rounded-lg w-full border border-myBlack boxShadow">Generate
+        Password</button>
     </div>
   </div>
 </template>
