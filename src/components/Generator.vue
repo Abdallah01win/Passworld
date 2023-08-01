@@ -124,8 +124,8 @@ export default {
   <div class="rounded-3xl border border-myBlack bg-background py-6 sm:py-8 px-5 sm:px-8 w-full boxShadow">
     <div class="flex flex-col gap-y-4 mx-auto font-Montserrat">
       <!-- Password input -->
-      <div class="mb-4 sm:mb-6 md:mb-8">
-        <div class="flex max-sm:flex-col max-sm:order-2 items-center justify-between mb-3 md:mb-5">
+      <div class="mb-4 sm:mb-6 md:mb-8 relative">
+        <div class="flex items-center justify-between mb-3 md:mb-5">
           <h2 class="text-lg sm:text-xl md:text-2xl font-bold" :class="{
             'text-red-600': passwordLength < 10,
             'text-orange-400': passwordLength < 20,
@@ -133,11 +133,11 @@ export default {
           }">
             ({{ passwordLength }}) {{ passwordStrength }} Password
           </h2>
-          <div class="flex ml-auto max-sm:order-1">
-            <span @click="copyToClipboard" class="bg-[#F5F5F4] p-3 rounded-full cursor-pointer hover:bg-gray-200/90"
+          <div class="flex ml-auto max-sm:absolute max-sm:right-0 max-sm:top-0 hidden">
+            <span @click="copyToClipboard" class="bg-[#F5F5F4] p-2 sm:p-3 rounded-full cursor-pointer hover:bg-gray-200/90"
               :disabled="copied">
-              <Copy v-if="!copied" class="w-6 fill-myBlack" />
-              <Checks v-else class="w-6 fill-myBlack" />
+              <Copy v-if="!copied" class="w-5 sm:w-6  fill-myBlack" />
+              <Checks v-else class="w-5 sm:w-6 fill-myBlack" />
             </span>
           </div>
         </div>

@@ -16,7 +16,7 @@ import Footer from '../components/Footer.vue';
   </main>
   
   <section id="generatorSection">
-    <div class="max-w-[300px] xs:max-w-[365px] sm:max-w-[520px] md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-20 grid grid-cols-1 lg:grid-cols-2 gap-x-8 max-lg:gap-y-4">
+    <div class="max-w-[300px] xs:max-w-[365px] sm:max-w-[520px] md:max-w-[680px] lg:max-w-[940px] xl:max-w-[1024px] mx-auto py-16 sm:py-20 grid grid-cols-1 lg:grid-cols-2 gap-x-8 max-lg:gap-y-4">
     <div>
       <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 leading-tight">Secure your vertuale life with the strongest passwords.</div>
       <p class="leading-relaxed font-Montserrat mb-4 w-full md:w-[85%] lg:w-full">Coming up with strong, unique passwords can be a challenge. <span class="font-bold uppercase">PassWorld</span> provides an easy and secure way to randomly generate passwords for all of your accounts. With our service, you can generate long, complex passwords that are <span class="font-bold uppercase">impossible</span> to guess.</p>
