@@ -3,7 +3,6 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      //rum: ['"Rum Raisin"', 'sans-serif'],
       Poppins: ['"Poppins"', "sans-serif"],
       Montserrat: ['"Montserrat"', "sans-serif"],
     },
@@ -33,5 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
