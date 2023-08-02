@@ -11,17 +11,17 @@ import Linkedin from './icons/Logos/Linkedin.vue';
             <div class="flex items-center gap-4">
                 <a href="https://twitter.com/AbdallahDev01 " target="_blank" rel="noopener noreferrer" class="flex " title="Twitter">
 
-                    <span class="p-2 bg-myGray-300 rounded-full hover:bg-gray-200/90">
+                    <span class="p-2 bg-myGray rounded-full hover:bg-gray-200/90">
                         <Twitter class="w-5 fill-myBlack" />
                     </span>
                 </a>
                 <a href="https://github.com/Abdallah01win" target="_blank" rel="noopener noreferrer" class="flex " title="Github">
-                    <span class="p-2 bg-myGray-300 rounded-full hover:bg-gray-200/90">
+                    <span class="p-2 bg-myGray rounded-full hover:bg-gray-200/90">
                         <Github class="w-5 fill-myBlack" />
                     </span>
                 </a>
                 <a href="https://www.linkedin.com/in/abdallahbari/" target="_blank" rel="noopener noreferrer" class="flex" title="Linkedin">
-                    <span class="p-2 bg-myGray-300 rounded-full hover:bg-gray-200/90">
+                    <span class="p-2 bg-myGray rounded-full hover:bg-gray-200/90">
                         <Linkedin class="w-5 fill-myBlack" />
                     </span>
                 </a>

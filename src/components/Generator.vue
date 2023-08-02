@@ -228,7 +228,7 @@ input[type="checkbox"]::after {
 }
 
 input[type="checkbox"]:active {
-  box-shadow: 1px 1px 0px 0px #1f1f1f;
+  box-shadow: 1px 1px 0px 0px #0A0A0A;
   transform: translateY(2px);
   transition: all ease-in 150ms;
 }

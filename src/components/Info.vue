@@ -11,7 +11,7 @@ import Shiled from "./icons/Shiled.vue";
 
         <div>
           <div class="flex items-center gap-3  mb-2">
-            <span class="bg-myGray-300 p-2 rounded-full">
+            <span class="bg-myGray p-2 rounded-full">
               <Pichart class="w-6 fill-myBlack" />
             </span>
             <div class="text-base font-semibold ">Customizable Elements</div>
@@ -26,7 +26,7 @@ import Shiled from "./icons/Shiled.vue";
       <div class="flex gap-x-3">
         <div>
           <div class="flex items-center gap-3  mb-2">
-            <span class="bg-myGray-300 p-2 rounded-full">
+            <span class="bg-myGray p-2 rounded-full">
               <Shiled class="w-6 fill-myBlack" />
             </span>
             <div class="font-semibold text-base">impenetrable security</div>
@@ -40,7 +40,7 @@ import Shiled from "./icons/Shiled.vue";
       <div class="flex gap-x-3">
         <div>
           <div class="flex items-center gap-3  mb-2">
-            <span class="bg-myGray-300 p-2 rounded-full">
+            <span class="bg-myGray p-2 rounded-full">
               <Lock class="w-6 fill-myBlack" />
             </span>
             <div class="font-semibold text-base">Elegant Simplicity</div>
