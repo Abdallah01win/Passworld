@@ -37,7 +37,7 @@ import Shiled from "./icons/Shiled.vue";
         </div>
       </div>
 
-      <div class="flex gap-x-3 /col-span-2">
+      <div class="flex gap-x-3">
         <div>
           <div class="flex items-center gap-3  mb-2">
             <span class="bg-myGray-300 p-2 rounded-full">
