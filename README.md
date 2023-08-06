@@ -31,7 +31,7 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your mach
 ```bash
 git clone https://github.com/Abdallah01win/Passworld.git
 ```
-2. 
+2. Cd into the cloned repository:
 ```bash
 cd Passworld
 ```
