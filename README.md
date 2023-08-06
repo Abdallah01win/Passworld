@@ -14,7 +14,7 @@ A simple customizable random password generator built with Vue.js, Vite, and Tai
 
 ## Live Demo
 
-You can try out the live demo [here](https://example.com/random-password-generator-demo).
+You can try out the live demo [here](https://passworld.pages.dev/).
 
 ## Getting Started
 
@@ -29,11 +29,11 @@ Make sure you have Node.js and npm (Node Package Manager) installed on your mach
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/Abdallah01win/passworld.git
+git clone https://github.com/Abdallah01win/Passworld.git
 ```
-
+2. 
 ```bash
-cd passworld
+cd Passworld
 ```
 
 ## Project Setup
@@ -46,12 +46,6 @@ npm install
 
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
 
 ## Contributing
